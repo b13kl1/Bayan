@@ -63,7 +63,6 @@
             display: none;
         }
         
-        /* تنسيق خاص لصفحة الاعتذار */
         .apology-text {
             font-size: 16px;
             font-weight: bold;
@@ -75,12 +74,12 @@
 
     <div id="page1" class="container">
         <h1>بيان ؟</h1>
-        <button onclick="showPage('page2')">اضغطي هنا</button>
+        <button onclick="showPage('page2')">عيوني</button>
     </div>
 
     <div id="page2" class="container hidden">
         <img id="hk-img-2" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDd4bWg4MzF4bnN4ZnMzbnN4ZnMzbnN4ZnMzbnN4ZnMzbnN4ZnMzbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/MDJ9IbxxvDUQM/giphy.gif" alt="Hello Kitty Standing">
-        <h2>زعلانة مني ؟</h2>
+        <h2 id="text-2">زعلانة مني ؟</h2>
         <button onclick="makeSad()">اه</button>
         <button onclick="showPage('page3')">لا</button>
     </div>
@@ -90,13 +89,13 @@
             " انا اسف جدا جدا على اللي صار مبارح ، واللي كان يصير دايما واني ما براضي ومافي مرة حسستك فيها انك رضيتي بسببي ، سواء زعلتي مني او لا ، والله ان كان في مرة جاي ما رح تكون بس سؤال ، مافي سبب لتصرفي الا لاني غلطان 100% ، وزي ما بحكي انتي دايما صح ، ووعد اخر مرة تصير وسامحيني ولا تزعلي مني "
         </p>
         <h2>بحبك جدا</h2>
-        <button onclick="showPage('page4')">التالي</button>
+        <button onclick="showPage('page4')">طيب !</button>
     </div>
 
     <div id="page4" class="container hidden">
         <img src="https://i.pinimg.com/originals/4e/eb/45/4eeb4520775d71b3d5b072834b655740.gif" alt="Hello Kitty Studying">
         <h2>احلى مهندزة ان شاء الله</h2>
-        <button onclick="showPage('page5')">التالي</button>
+        <button onclick="showPage('page5')">ان شاء الله</button>
     </div>
 
     <div id="page5" class="container hidden">
@@ -112,32 +111,29 @@
     </div>
 
     <script>
-        // دالة التنقل بين الصفحات
         function showPage(pageId) {
-            // نخفي كل الصفحات
             const pages = document.querySelectorAll('.container');
             pages.forEach(page => page.classList.add('hidden'));
-
-            // نظهر الصفحة المطلوبة
             document.getElementById(pageId).classList.remove('hidden');
         }
 
-        // دالة الصفحة الثانية (لما تختار اه)
+        // التعديل الثاني: تغيير الصورة والنص بدون رسالة تنبيه
         function makeSad() {
             const img = document.getElementById('hk-img-2');
-            // هنا يتغير الرابط لصورة هيلو كيتي زعلانة
+            const text = document.getElementById('text-2');
+            
+            // تغيير الصورة لوحدة زعلانة
             img.src = "https://media.tenor.com/images/54e7d991667b36643697e68222c54483/tenor.gif"; 
-            alert("لا تضغطي اه 😢 اضغطي لا عشان نراضي بعض");
+            
+            // تغيير النص
+            text.innerText = "اضغطي لا عشان نكمل 👈🏻👉🏻";
         }
 
-        // دالة الصفحة الخامسة (لما تختار اه لسا)
         function stillSad() {
             const img = document.getElementById('hk-img-5');
             const text = document.getElementById('text-5');
             
-            // تغيير الصورة لزعلانة
             img.src = "https://media.tenor.com/images/54e7d991667b36643697e68222c54483/tenor.gif";
-            // تغيير النص
             text.innerText = "لهسا 😿";
         }
     </script>
